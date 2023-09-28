@@ -29,3 +29,31 @@ function aHardTruthDisplay() {
         aHardTruth.setAttribute('style', 'visibility: visible');
     }
 }
+
+
+// Well this is a common one. Add a keyup listener on both fields and show a visual hint (for instance turn the field red) if the password is too short (less than 6 characters) or if the password and its confirmation do not match.
+
+let pwd = document.querySelector('#pwd');
+let pwdConfirm = document.querySelector('#pwd-confirm');
+
+pwd.addEventListener('keyup', tooShort);
+pwdConfirm.addEventListener('keyup', confirm);
+
+function tooShort() {
+    console.log('pwd.value.length : ', pwd.value.length);
+    if (pwd.value.length < 6) {
+        pwd.style.backgroundColor = 'crimson';
+    }
+    else {
+        pwd.style.backgroundColor = 'white';
+    }
+}
+
+function confirm() {
+    if (pwdConfirm.value && (pwd.value !== pwdConfirm.value)) {
+        pwdConfirm.style.backgroundColor = 'crimson';
+    }
+    else {
+        pwdConfirm.style.backgroundColor = 'white';
+    }
+}
