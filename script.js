@@ -57,3 +57,22 @@ function confirm() {
         pwdConfirm.style.backgroundColor = 'white';
     }
 }
+
+
+// Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use, we'll say that the dark mode is just turning the background black and the text white.
+
+let toggleDarkmode = document.querySelector('#toggle-darkmode');
+
+toggleDarkmode.addEventListener('change', darkmode);
+
+function darkmode() {
+    console.log('toggleDarkmode.value : ', toggleDarkmode.value);
+    if (toggleDarkmode.value === 'dark') {
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+    }
+    else {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+    }
+}
