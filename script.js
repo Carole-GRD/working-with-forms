@@ -8,9 +8,13 @@ let firstnameDisplayContent;
 
 firstnameInput.addEventListener('keyup', display);
 
-function display() {
-    firstnameDisplay.textContent = firstnameInput.value;
+function display(e) {
+    console.log(e); 
+    firstnameDisplay.textContent = e.taget.value;
 }
+// function display() {
+//     firstnameDisplay.textContent = firstnameInput.value;
+// }
 
 
 // Add a keyup listener on the second input (the number input), so that if the age is below 18 the content of the section a-hard-truth remains hidden, otherwise show them this hard to swallow fact.
