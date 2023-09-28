@@ -47,6 +47,9 @@ function tooShort() {
     else {
         pwd.style.backgroundColor = 'white';
     }
+    if (pwdConfirm.value) {
+        confirm();    
+    }
 }
 
 function confirm() {
